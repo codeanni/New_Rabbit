@@ -15,7 +15,11 @@ const adminOrderRoutes = require("./routes/adminOrderRoutes")
 
 const app = express(); //initialize express app
 app.use(express.json()); //server with able to work with json
-app.use(cors()); //to communicate with react server
+app.use(cors({
+    origin: "https://new-rabbit-wfnd.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+})); //to communicate with react server
 app.use(express.json());
 dotenv.config();
 
